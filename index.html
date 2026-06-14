@@ -27,10 +27,10 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVBAR ULTRA-COLORIDA --- */
+        /* --- NAVBAR COM SUPORTE A LOGO EM IMAGEM --- */
         header {
             background: linear-gradient(90deg, var(--purple-neon), var(--pink-neon));
-            padding: 15px 5%;
+            padding: 10px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -40,16 +40,11 @@
             z-index: 1000;
         }
 
-        .logo {
-            font-size: 26px;
-            font-weight: bold;
-            color: var(--yellow-funny);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 0px #000;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .logo img {
+            height: 55px;
+            width: auto;
+            vertical-align: middle;
+            display: block;
         }
 
         nav a {
@@ -201,17 +196,13 @@
             transform: scale(1.02);
         }
 
-        /* Placeholder para a imagem vibrante do produto */
+        /* Ajuste para as fotos reais preencherem bem o espaço */
         .product-image {
             width: 100%;
-            height: 260px;
-            background: linear-gradient(135deg, #3d2b63, #1a1630);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #a496cc;
-            font-weight: bold;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 2px solid #251b45;
         }
 
         .product-info {
@@ -248,7 +239,7 @@
             color: #fff;
         }
 
-        /* --- SELEÇÃO DE CORES E TAMANHOS (INTUITIVO E VISUAL) --- */
+        /* --- SELEÇÃO DE CORES E TAMANHOS --- */
         .customizer {
             margin-top: 15px;
             padding-top: 15px;
@@ -326,7 +317,7 @@
             transform: translateY(-2px);
         }
 
-        /* --- FOOTER DIVERTIDO E INSTITUCIONAL --- */
+        /* --- FOOTER --- */
         footer {
             background-color: #08060f;
             text-align: center;
@@ -347,9 +338,11 @@
 </head>
 <body>
 
-    <!-- NAVBAR COM A NOVA MARCA -->
+    <!-- NAVBAR ATUALIZADA COM O SEU LOGO DO ARQUIVO 1000723586.png -->
     <header>
-        <div class="logo">🔮 NeoGeneses</div>
+        <div class="logo">
+            <img src="logo.png" alt="NeoGeneses 3D">
+        </div>
         <nav>
             <a href="#" class="active">Loja Virtual</a>
             <a href="#">Como Fabricamos</a>
@@ -357,7 +350,7 @@
         </nav>
     </header>
 
-    <!-- BANNER PRINCIPAL (HERO) - FOCO EM CRIATIVIDADE E ACABAMENTO FINO -->
+    <!-- BANNER PRINCIPAL (HERO) -->
     <section class="hero">
         <div class="quality-badge">✨ Tecnologia de Ponta & Acabamento Fino</div>
         <h1>Suas ideias ganham vida e cor! 🔮</h1>
@@ -365,7 +358,7 @@
         <button class="cta-btn">Explorar o Universo NeoGeneses</button>
     </section>
 
-    <!-- NAVEGAÇÃO INTUITIVA POR NICHOS -->
+    <!-- NAVEGAÇÃO POR NICHOS -->
     <h2 class="section-title">Escolha o seu nicho favorito</h2>
     <p class="section-subtitle">Navegue de forma simples, divertida e monte o produto do seu jeito!</p>
     
@@ -388,23 +381,22 @@
         </div>
     </section>
 
-    <!-- VITRINE DE PRODUTOS COM CUSTOMIZADOR EMBUTIDO -->
+    <!-- VITRINE DE PRODUTOS PREMIUM COM FOTOS REAIS -->
     <h2 class="section-title">Nossas Criações Impecáveis</h2>
     <p class="section-subtitle">Cada peça passa por pós-processamento manual para garantir o acabamento fino.</p>
 
     <section class="products-grid">
 
-        <!-- PRODUTO 1: GEEK -->
+        <!-- PRODUTO 1: GEEK (FOTO: suporte.jpg) -->
         <div class="product-card">
-            <div class="product-image">[ 👾 Foto: Suporte Geek Premium ]</div>
+            <img src="suporte.jpg" alt="Suporte Geek Premium" class="product-image">
             <div class="product-info">
                 <div class="product-header-tags">
                     <span class="product-tag">Geek & Pop</span>
                     <span class="premium-label">⭐ Acabamento Fino</span>
                 </div>
-                <h3 class="product-title">Suporte de Controle Advanced</h3>
+                <h3 class="product-title">Suporte Avançado Setup</h3>
                 
-                <!-- CUSTOMIZADOR INTUITIVO -->
                 <div class="customizer">
                     <div class="customizer-title">Selecione a Cor do Filamento:</div>
                     <div class="color-options">
@@ -425,9 +417,9 @@
             </div>
         </div>
 
-        <!-- PRODUTO 2: CASA & DECORAÇÃO -->
+        <!-- PRODUTO 2: CASA & DECORAÇÃO (FOTO: vaso.jpg) -->
         <div class="product-card">
-            <div class="product-image">[ 🌱 Foto: Vaso Prisma Geométrico ]</div>
+            <img src="vaso.jpg" alt="Vaso Prisma Minimalista" class="product-image">
             <div class="product-info">
                 <div class="product-header-tags">
                     <span class="product-tag">Casa & Decor</span>
@@ -455,9 +447,9 @@
             </div>
         </div>
 
-        <!-- PRODUTO 3: UTILIDADES -->
+        <!-- PRODUTO 3: UTILIDADES (FOTO: organizador.jpg) -->
         <div class="product-card">
-            <div class="product-image">[ 🛠️ Foto: Organizador Modular Pro ]</div>
+            <img src="organizador.jpg" alt="Organizador Setup Modular" class="product-image">
             <div class="product-info">
                 <div class="product-header-tags">
                     <span class="product-tag">Utilidades</span>
@@ -485,7 +477,7 @@
 
     </section>
 
-    <!-- FOOTER COM CONCEITO -->
+    <!-- FOOTER -->
     <footer>
         <p>🔮 <span class="highlight">NeoGeneses</span> - Materializando imaginação com alta precisão e pós-processamento fino.</p>
         <p>Peças sem rebarbas, feitas sob medida e enviadas com todo carinho para você.</p>
