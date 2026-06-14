@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoGeneses | Impressão 3D de Alta Qualidade & Acabamento Fino</title>
+    <style>
+        /* --- ESTILOS GERAIS E PALETA DE CORES CYBER-DIVERTIDA --- */
+        :root {
+            --bg-dark: #0f0c1b;
+            --purple-neon: #8a2be2;
+            --pink-neon: #ff007f;
+            --blue-neon: #00f0ff;
+            --yellow-funny: #fff000;
+            --gold-premium: #ffd700;
+            --text-light: #ffffff;
+            --card-bg: #1a1630;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR ULTRA-COLORIDA --- */
+        header {
+            background: linear-gradient(90deg, var(--purple-neon), var(--pink-neon));
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(255, 0, 127, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--yellow-funny);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0px #000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--yellow-funny);
+            color: var(--bg-dark);
+            box-shadow: 0 0 10px var(--yellow-funny);
+        }
+
+        /* --- HERO BANNER: IMPACTO, MAGIA E QUALIDADE --- */
+        .hero {
+            text-align: center;
+            padding: 90px 20px;
+            background: radial-gradient(circle, #251b45 0%, var(--bg-dark) 100%);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+            color: var(--blue-neon);
+            text-shadow: 0 0 15px var(--blue-neon);
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: #bfaee3;
+            max-width: 750px;
+            margin: 0 auto 30px auto;
+        }
+
+        .hero p strong {
+            color: var(--gold-premium);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-btn {
+            background-color: var(--pink-neon);
+            color: white;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px var(--pink-neon);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px var(--pink-neon);
+        }
+
+        /* --- SELO DE QUALIDADE EM DESTAQUE --- */
+        .quality-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--gold-premium);
+            padding: 6px 18px;
+            border-radius: 30px;
+            color: var(--gold-premium);
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+        }
+
+        /* --- NAVEGAÇÃO INTUITIVA POR NICHOS (CATEGORIAS) --- */
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-top: 60px;
+            margin-bottom: 10px;
+            color: var(--yellow-funny);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #8a81a3;
+            font-size: 16px;
+            margin-bottom: 35px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            padding: 0 5%;
+            margin-bottom: 50px;
+        }
+
+        .category-card {
+            background-color: var(--card-bg);
+            border: 3px solid var(--purple-neon);
+            border-radius: 20px;
+            padding: 25px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--blue-neon);
+            box-shadow: 0 0 15px var(--blue-neon);
+        }
+
+        .category-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* --- VITRINE DE PRODUTOS PREMIUM --- */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            margin-bottom: 70px;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            border-color: var(--pink-neon);
+            box-shadow: 0 10px 25px rgba(255, 0, 127, 0.2);
+            transform: scale(1.02);
+        }
+
+        /* Placeholder para a imagem vibrante do produto */
+        .product-image {
+            width: 100%;
+            height: 260px;
+            background: linear-gradient(135deg, #3d2b63, #1a1630);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #a496cc;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-header-tags {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .product-tag {
+            background-color: var(--blue-neon);
+            color: var(--bg-dark);
+            padding: 3px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        .premium-label {
+            font-size: 11px;
+            color: var(--gold-premium);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-title {
+            font-size: 22px;
+            margin: 0 0 12px 0;
+            color: #fff;
+        }
+
+        /* --- SELEÇÃO DE CORES E TAMANHOS (INTUITIVO E VISUAL) --- */
+        .customizer {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #332a5c;
+        }
+
+        .customizer-title {
+            font-size: 13px;
+            color: #b3a7d6;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .color-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .color-dot {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: transform 0.2s;
+        }
+
+        .color-dot:hover {
+            transform: scale(1.25);
+            border-color: #fff;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .size-btn {
+            background-color: #2b244d;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .size-btn:hover {
+            background-color: var(--purple-neon);
+            color: #fff;
+        }
+
+        .buy-btn {
+            width: 100%;
+            background-color: var(--yellow-funny);
+            color: var(--bg-dark);
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+        }
+
+        .buy-btn:hover {
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* --- FOOTER DIVERTIDO E INSTITUCIONAL --- */
+        footer {
+            background-color: #08060f;
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 4px solid var(--blue-neon);
+        }
+
+        footer p {
+            margin: 6px 0;
+            color: #7b6f9f;
+        }
+
+        footer .highlight {
+            color: var(--pink-neon);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR COM A NOVA MARCA -->
+    <header>
+        <div class="logo">🔮 NeoGeneses</div>
+        <nav>
+            <a href="#" class="active">Loja Virtual</a>
+            <a href="#">Como Fabricamos</a>
+            <a href="#">Orçamento Premium</a>
+        </nav>
+    </header>
+
+    <!-- BANNER PRINCIPAL (HERO) - FOCO EM CRIATIVIDADE E ACABAMENTO FINO -->
+    <section class="hero">
+        <div class="quality-badge">✨ Tecnologia de Ponta & Acabamento Fino</div>
+        <h1>Suas ideias ganham vida e cor! 🔮</h1>
+        <p>Criamos universos inteiros camada por camada. Esqueça rebarbas e marcas grosseiras: aqui você garante <strong>máxima resolução, cores vibrantes e o tamanho perfeito</strong> para o seu espaço.</p>
+        <button class="cta-btn">Explorar o Universo NeoGeneses</button>
+    </section>
+
+    <!-- NAVEGAÇÃO INTUITIVA POR NICHOS -->
+    <h2 class="section-title">Escolha o seu nicho favorito</h2>
+    <p class="section-subtitle">Navegue de forma simples, divertida e monte o produto do seu jeito!</p>
+    
+    <section class="categories-grid">
+        <div class="category-card">
+            <span class="category-icon">👾</span>
+            <h3>Geek & Pop</h3>
+        </div>
+        <div class="category-card">
+            <span class="category-icon">🌱</span>
+            <h3>Casa & Decor</h3>
+        </div>
+        <div class="category-card">
+            <span class="category-icon">🛠️</span>
+            <h3>Utilidades</h3>
+        </div>
+        <div class="category-card">
+            <span class="category-icon">🔑</span>
+            <h3>Acessórios</h3>
+        </div>
+    </section>
+
+    <!-- VITRINE DE PRODUTOS COM CUSTOMIZADOR EMBUTIDO -->
+    <h2 class="section-title">Nossas Criações Impecáveis</h2>
+    <p class="section-subtitle">Cada peça passa por pós-processamento manual para garantir o acabamento fino.</p>
+
+    <section class="products-grid">
+
+        <!-- PRODUTO 1: GEEK -->
+        <div class="product-card">
+            <div class="product-image">[ 👾 Foto: Suporte Geek Premium ]</div>
+            <div class="product-info">
+                <div class="product-header-tags">
+                    <span class="product-tag">Geek & Pop</span>
+                    <span class="premium-label">⭐ Acabamento Fino</span>
+                </div>
+                <h3 class="product-title">Suporte de Controle Advanced</h3>
+                
+                <!-- CUSTOMIZADOR INTUITIVO -->
+                <div class="customizer">
+                    <div class="customizer-title">Selecione a Cor do Filamento:</div>
+                    <div class="color-options">
+                        <div class="color-dot" style="background-color: #ff007f;" title="Rosa Neon"></div>
+                        <div class="color-dot" style="background-color: #00f0ff;" title="Azul Elétrico"></div>
+                        <div class="color-dot" style="background-color: #ffd700;" title="Ouro Silk"></div>
+                        <div class="color-dot" style="background-color: #000000;" title="Preto Premium"></div>
+                    </div>
+                    
+                    <div class="customizer-title">Defina o Tamanho da Peça:</div>
+                    <div class="size-options">
+                        <button class="size-btn">P (10cm)</button>
+                        <button class="size-btn">M (15cm)</button>
+                        <button class="size-btn">G (22cm)</button>
+                    </div>
+                </div>
+                <button class="buy-btn">Adicionar ao Carrinho Mágico</button>
+            </div>
+        </div>
+
+        <!-- PRODUTO 2: CASA & DECORAÇÃO -->
+        <div class="product-card">
+            <div class="product-image">[ 🌱 Foto: Vaso Prisma Geométrico ]</div>
+            <div class="product-info">
+                <div class="product-header-tags">
+                    <span class="product-tag">Casa & Decor</span>
+                    <span class="premium-label">⭐ Lixado & Polido</span>
+                </div>
+                <h3 class="product-title">Vaso Prisma Minimalista</h3>
+                
+                <div class="customizer">
+                    <div class="customizer-title">Selecione a Cor do Filamento:</div>
+                    <div class="color-options">
+                        <div class="color-dot" style="background-color: #ffffff; border: 1px solid #555;" title="Branco Cetim"></div>
+                        <div class="color-dot" style="background-color: #8a2be2;" title="Roxo Cyber"></div>
+                        <div class="color-dot" style="background-color: #ff4500;" title="Laranja Vivo"></div>
+                        <div class="color-dot" style="background-color: #00ff00;" title="Verde Ácido"></div>
+                    </div>
+                    
+                    <div class="customizer-title">Defina o Tamanho da Peça:</div>
+                    <div class="size-options">
+                        <button class="size-btn">P (12cm)</button>
+                        <button class="size-btn">M (18cm)</button>
+                        <button class="size-btn">G (26cm)</button>
+                    </div>
+                </div>
+                <button class="buy-btn">Adicionar ao Carrinho Mágico</button>
+            </div>
+        </div>
+
+        <!-- PRODUTO 3: UTILIDADES -->
+        <div class="product-card">
+            <div class="product-image">[ 🛠️ Foto: Organizador Modular Pro ]</div>
+            <div class="product-info">
+                <div class="product-header-tags">
+                    <span class="product-tag">Utilidades</span>
+                    <span class="premium-label">⭐ Alta Resistência</span>
+                </div>
+                <h3 class="product-title">Organizador Setup Modular</h3>
+                
+                <div class="customizer">
+                    <div class="customizer-title">Selecione a Cor do Filamento:</div>
+                    <div class="color-options">
+                        <div class="color-dot" style="background-color: #000000;" title="Preto Fosco"></div>
+                        <div class="color-dot" style="background-color: #708090;" title="Cinza Espacial"></div>
+                        <div class="color-dot" style="background-color: #00f0ff;" title="Azul Elétrico"></div>
+                    </div>
+                    
+                    <div class="customizer-title">Defina o Tamanho da Peça:</div>
+                    <div class="size-options">
+                        <button class="size-btn">Padrão 1 Bloco</button>
+                        <button class="size-btn">Combo 3 Blocos</button>
+                    </div>
+                </div>
+                <button class="buy-btn">Adicionar ao Carrinho Mágico</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER COM CONCEITO -->
+    <footer>
+        <p>🔮 <span class="highlight">NeoGeneses</span> - Materializando imaginação com alta precisão e pós-processamento fino.</p>
+        <p>Peças sem rebarbas, feitas sob medida e enviadas com todo carinho para você.</p>
+        <p style="font-size: 12px; margin-top: 20px; color: #4e4470;">© 2026 NeoGeneses 3D. Todos os direitos reservados de criação.</p>
+    </footer>
+
+</body>
+</html>
