@@ -27,14 +27,16 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVBAR COM SUPORTE A LOGO EM IMAGEM --- */
+        /* --- NAVBAR MODERNA COM EFEITO DE VIDRO FLUTUANTE --- */
         header {
-            background: linear-gradient(90deg, var(--purple-neon), var(--pink-neon));
+            background: rgba(26, 22, 48, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             padding: 10px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 20px rgba(255, 0, 127, 0.4);
+            border-bottom: 1px solid rgba(255, 0, 127, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -60,13 +62,13 @@
         nav a:hover, nav a.active {
             background-color: var(--yellow-funny);
             color: var(--bg-dark);
-            box-shadow: 0 0 10px var(--yellow-funny);
+            box-shadow: 0 0 15px var(--yellow-funny);
         }
 
         /* --- HERO BANNER: IMPACTO, MAGIA E QUALIDADE --- */
         .hero {
             text-align: center;
-            padding: 90px 20px;
+            padding: 100px 20px;
             background: radial-gradient(circle, #251b45 0%, var(--bg-dark) 100%);
             position: relative;
         }
@@ -126,7 +128,7 @@
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
         }
 
-        /* --- NAVEGAÇÃO INTUITIVA POR NICHOS (CATEGORIAS) --- */
+        /* --- NAVEGAÇÃO INTUITIVA POR NICHOS --- */
         .section-title {
             text-align: center;
             font-size: 34px;
@@ -150,29 +152,37 @@
             margin-bottom: 50px;
         }
 
+        /* Cartões de Nicho preparados para o efeito 3D */
         .category-card {
             background-color: var(--card-bg);
-            border: 3px solid var(--purple-neon);
+            border: 2px solid var(--purple-neon);
             border-radius: 20px;
             padding: 25px 20px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transition: border-color 0.3s;
         }
 
         .category-card:hover {
-            transform: translateY(-5px);
             border-color: var(--blue-neon);
-            box-shadow: 0 0 15px var(--blue-neon);
         }
 
         .category-icon {
             font-size: 45px;
             margin-bottom: 10px;
             display: block;
+            transform: translateZ(30px); /* Faz o ícone flutuar acima do fundo */
+            transition: transform 0.3s;
         }
 
-        /* --- VITRINE DE PRODUTOS PREMIUM --- */
+        .category-card h3 {
+            margin: 0;
+            transform: translateZ(20px);
+        }
+
+        /* --- VITRINE DE PRODUTOS PREMIUM COM SUPORTE TILT 3D --- */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -181,32 +191,29 @@
             margin-bottom: 70px;
         }
 
+        /* Configuração estrutural para o efeito tridimensional físico */
         .product-card {
             background-color: var(--card-bg);
             border-radius: 20px;
             overflow: hidden;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
             position: relative;
         }
 
-        .product-card:hover {
-            border-color: var(--pink-neon);
-            box-shadow: 0 10px 25px rgba(255, 0, 127, 0.2);
-            transform: scale(1.02);
-        }
-
-        /* Ajuste para as fotos reais preencherem bem o espaço */
         .product-image {
             width: 100%;
             height: 280px;
             object-fit: cover;
             display: block;
             border-bottom: 2px solid #251b45;
+            transform: translateZ(10px); /* Profundidade na imagem */
         }
 
         .product-info {
             padding: 20px;
+            transform: translateZ(25px); /* Traz as informações para frente */
         }
 
         .product-header-tags {
@@ -269,7 +276,7 @@
         }
 
         .color-dot:hover {
-            transform: scale(1.25);
+            transform: scale(1.25) translateZ(10px);
             border-color: #fff;
         }
 
@@ -309,12 +316,12 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.2s;
+            transform: translateZ(15px);
         }
 
         .buy-btn:hover {
             background-color: #fff;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-            transform: translateY(-2px);
         }
 
         /* --- FOOTER --- */
@@ -338,7 +345,7 @@
 </head>
 <body>
 
-    <!-- NAVBAR ATUALIZADA COM O SEU LOGO DO ARQUIVO 1000723586.png -->
+    <!-- NAVBAR COM EFEITO BLUR -->
     <header>
         <div class="logo">
             <img src="logo.png" alt="NeoGeneses 3D">
@@ -363,25 +370,25 @@
     <p class="section-subtitle">Navegue de forma simples, divertida e monte o produto do seu jeito!</p>
     
     <section class="categories-grid">
-        <div class="category-card">
+        <div class="category-card" data-tilt>
             <span class="category-icon">👾</span>
             <h3>Geek & Pop</h3>
         </div>
-        <div class="category-card">
+        <div class="category-card" data-tilt>
             <span class="category-icon">🌱</span>
             <h3>Casa & Decor</h3>
         </div>
-        <div class="category-card">
+        <div class="category-card" data-tilt>
             <span class="category-icon">🛠️</span>
             <h3>Utilidades</h3>
         </div>
-        <div class="category-card">
+        <div class="category-card" data-tilt>
             <span class="category-icon">🔑</span>
             <h3>Acessórios</h3>
         </div>
     </section>
 
-    <!-- VITRINE DE PRODUTOS PREMIUM COM FOTOS REAIS -->
+    <!-- VITRINE DE PRODUTOS PREMIUM -->
     <h2 class="section-title">Nossas Criações Impecáveis</h2>
     <p class="section-subtitle">Cada peça passa por pós-processamento manual para garantir o acabamento fino.</p>
 
@@ -484,5 +491,23 @@
         <p style="font-size: 12px; margin-top: 20px; color: #4e4470;">© 2026 NeoGeneses 3D. Todos os direitos reservados de criação.</p>
     </footer>
 
+    <!-- --- INCLUSÃO DO MOTOR JAVASCRIPT DE DINÂMICA 3D --- -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script>
+        // Inicializa a inclinação física 3D em todos os blocos de produtos com reflexo de luz (glare)
+        VanillaTilt.init(document.querySelectorAll(".product-card"), {
+            max: 10,             // Ângulo máximo de inclinação física
+            speed: 500,          // Velocidade da transição de retorno
+            glare: true,         // Ativa o reflexo de luz ultra-moderno
+            "max-glare": 0.25,   // Intensidade máxima do brilho do reflexo
+            gyroscope: true      // Permite inclinar movendo o celular!
+        });
+
+        // Inicializa a inclinação também nas caixinhas de nichos
+        VanillaTilt.init(document.querySelectorAll(".category-card"), {
+            max: 15,
+            speed: 400
+        });
+    </script>
 </body>
 </html>
