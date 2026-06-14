@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeoGeneses | Impressão 3D de Alta Qualidade & Acabamento Fino</title>
     <style>
-        /* --- ESTILOS GERAIS E PALETA DE CORES CYBER-DIVERTIDA --- */
+        /* --- PALETA DE CORES CYBER-PREMIUM --- */
         :root {
-            --bg-dark: #0f0c1b;
+            --bg-dark: #0a0612;
             --purple-neon: #8a2be2;
             --pink-neon: #ff007f;
             --blue-neon: #00f0ff;
             --yellow-funny: #fff000;
             --gold-premium: #ffd700;
             --text-light: #ffffff;
-            --card-bg: #1a1630;
         }
 
         body {
@@ -27,26 +26,26 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVBAR MODERNA COM EFEITO DE VIDRO FLUTUANTE --- */
+        /* --- NAVBAR FLUTUANTE DISCRETA --- */
         header {
-            background: rgba(26, 22, 48, 0.8);
+            background: rgba(10, 6, 18, 0.8);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            padding: 10px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 0, 127, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo img {
-            height: 55px;
-            width: auto;
-            vertical-align: middle;
-            display: block;
+        .nav-brand {
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 1px;
+            color: var(--blue-neon);
         }
 
         nav a {
@@ -60,215 +59,193 @@
         }
 
         nav a:hover, nav a.active {
-            background-color: var(--yellow-funny);
-            color: var(--bg-dark);
-            box-shadow: 0 0 15px var(--yellow-funny);
+            background-color: var(--pink-neon);
+            color: white;
+            box-shadow: 0 0 15px var(--pink-neon);
         }
 
-        /* --- HERO BANNER: IMPACTO, MAGIA E QUALIDADE --- */
+        /* --- HERO BANNER: LOGO EM DESTAQUE ABSOLUTO --- */
         .hero {
             text-align: center;
-            padding: 100px 20px;
-            background: radial-gradient(circle, #251b45 0%, var(--bg-dark) 100%);
-            position: relative;
+            padding: 80px 20px;
+            background: radial-gradient(circle, #201335 0%, var(--bg-dark) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-logo-wrapper {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(255, 0, 127, 0.3);
+            box-shadow: 0 0 40px rgba(138, 43, 226, 0.4), inset 0 0 20px rgba(255, 0, 127, 0.2);
+            border-radius: 30px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        .hero-logo-wrapper:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 60px rgba(0, 240, 255, 0.5);
+            border-color: var(--blue-neon);
+        }
+
+        .hero-logo-wrapper img {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 30px rgba(138, 43, 226, 0.3); }
+            100% { box-shadow: 0 0 50px rgba(255, 0, 127, 0.5); }
         }
 
         .hero h1 {
-            font-size: 52px;
+            font-size: 38px;
             margin-bottom: 15px;
-            color: var(--blue-neon);
-            text-shadow: 0 0 15px var(--blue-neon);
+            color: #fff;
         }
 
         .hero p {
-            font-size: 22px;
+            font-size: 20px;
             color: #bfaee3;
-            max-width: 750px;
+            max-width: 700px;
             margin: 0 auto 30px auto;
         }
 
-        .hero p strong {
-            color: var(--gold-premium);
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-        }
-
         .cta-btn {
-            background-color: var(--pink-neon);
+            background: linear-gradient(45deg, var(--pink-neon), var(--purple-neon));
             color: white;
-            padding: 15px 40px;
+            padding: 16px 45px;
             font-size: 18px;
             font-weight: bold;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             text-transform: uppercase;
-            box-shadow: 0 0 20px var(--pink-neon);
+            box-shadow: 0 5px 25px rgba(255, 0, 127, 0.4);
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .cta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 35px var(--pink-neon);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px var(--pink-neon);
         }
 
-        /* --- SELO DE QUALIDADE EM DESTAQUE --- */
-        .quality-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid var(--gold-premium);
-            padding: 6px 18px;
-            border-radius: 30px;
-            color: var(--gold-premium);
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
-        }
-
-        /* --- NAVEGAÇÃO INTUITIVA POR NICHOS --- */
+        /* --- VITRINE COM IMAGENS DE FUNDO COLORIDAS --- */
         .section-title {
             text-align: center;
-            font-size: 34px;
+            font-size: 36px;
             margin-top: 60px;
             margin-bottom: 10px;
             color: var(--yellow-funny);
+            text-shadow: 0 0 10px rgba(255, 240, 0, 0.2);
         }
 
         .section-subtitle {
             text-align: center;
             color: #8a81a3;
             font-size: 16px;
-            margin-bottom: 35px;
+            margin-bottom: 45px;
         }
 
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 20px;
-            padding: 0 5%;
-            margin-bottom: 50px;
-        }
-
-        /* Cartões de Nicho preparados para o efeito 3D */
-        .category-card {
-            background-color: var(--card-bg);
-            border: 2px solid var(--purple-neon);
-            border-radius: 20px;
-            padding: 25px 20px;
-            text-align: center;
-            cursor: pointer;
-            transform-style: preserve-3d;
-            transform: perspective(1000px);
-            transition: border-color 0.3s;
-        }
-
-        .category-card:hover {
-            border-color: var(--blue-neon);
-        }
-
-        .category-icon {
-            font-size: 45px;
-            margin-bottom: 10px;
-            display: block;
-            transform: translateZ(30px); /* Faz o ícone flutuar acima do fundo */
-            transition: transform 0.3s;
-        }
-
-        .category-card h3 {
-            margin: 0;
-            transform: translateZ(20px);
-        }
-
-        /* --- VITRINE DE PRODUTOS PREMIUM COM SUPORTE TILT 3D --- */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 30px;
-            padding: 0 5%;
-            margin-bottom: 70px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 0 8%;
+            margin-bottom: 80px;
         }
 
-        /* Configuração estrutural para o efeito tridimensional físico */
         .product-card {
-            background-color: var(--card-bg);
-            border-radius: 20px;
+            background-color: #130f26;
+            border-radius: 24px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transform-style: preserve-3d;
             transform: perspective(1000px);
-            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .product-image {
+        /* Contêiner da imagem com gradiente colorido de fundo vibrante */
+        .product-image-container {
             width: 100%;
-            height: 280px;
-            object-fit: cover;
-            display: block;
-            border-bottom: 2px solid #251b45;
-            transform: translateZ(10px); /* Profundidade na imagem */
+            height: 300px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transform: translateZ(15px);
+        }
+
+        /* Fundos coloridos dinâmicos para cada nicho */
+        .bg-geek { background: linear-gradient(135deg, #2b1055, #ff007f); }
+        .bg-utilidades { background: linear-gradient(135deg, #001f3f, #00f0ff); }
+        .bg-acessorios { background: linear-gradient(135deg, #4a00e0, #8e2de2); }
+
+        .product-image-container img {
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+            filter: drop-shadow(0 15px 20px rgba(0,0,0,0.6));
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image-container img {
+            transform: scale(1.08) translateY(-5px);
         }
 
         .product-info {
-            padding: 20px;
-            transform: translateZ(25px); /* Traz as informações para frente */
-        }
-
-        .product-header-tags {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
+            padding: 25px;
+            transform: translateZ(30px);
         }
 
         .product-tag {
-            background-color: var(--blue-neon);
-            color: var(--bg-dark);
-            padding: 3px 12px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 10px;
-        }
-
-        .premium-label {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--blue-neon);
+            border: 1px solid var(--blue-neon);
+            padding: 4px 14px;
             font-size: 11px;
-            color: var(--gold-premium);
             font-weight: bold;
+            border-radius: 30px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .product-title {
-            font-size: 22px;
-            margin: 0 0 12px 0;
+            font-size: 24px;
+            margin: 15px 0 10px 0;
             color: #fff;
         }
 
-        /* --- SELEÇÃO DE CORES E TAMANHOS --- */
+        /* --- CUSTOMIZADOR INTERATIVO --- */
         .customizer {
-            margin-top: 15px;
+            margin-top: 20px;
             padding-top: 15px;
-            border-top: 1px solid #332a5c;
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
 
         .customizer-title {
             font-size: 13px;
             color: #b3a7d6;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             font-weight: bold;
         }
 
         .color-options {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 15px;
         }
 
         .color-dot {
-            width: 22px;
-            height: 22px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             cursor: pointer;
             border: 2px solid transparent;
@@ -276,31 +253,31 @@
         }
 
         .color-dot:hover {
-            transform: scale(1.25) translateZ(10px);
+            transform: scale(1.3);
             border-color: #fff;
         }
 
         .size-options {
             display: flex;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .size-btn {
-            background-color: #2b244d;
+            background-color: #221a3c;
             color: white;
-            border: none;
-            padding: 6px 14px;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 8px 16px;
             font-size: 12px;
             font-weight: bold;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.2s;
+            transition: all 0.2s;
         }
 
         .size-btn:hover {
             background-color: var(--purple-neon);
-            color: #fff;
+            border-color: var(--purple-neon);
         }
 
         .buy-btn {
@@ -308,205 +285,149 @@
             background-color: var(--yellow-funny);
             color: var(--bg-dark);
             border: none;
-            padding: 14px;
+            padding: 15px;
             font-size: 16px;
             font-weight: bold;
-            border-radius: 12px;
+            border-radius: 14px;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.2s;
-            transform: translateZ(15px);
         }
 
         .buy-btn:hover {
             background-color: #fff;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
         }
 
         /* --- FOOTER --- */
         footer {
-            background-color: #08060f;
+            background-color: #050309;
             text-align: center;
-            padding: 50px 20px;
-            border-top: 4px solid var(--blue-neon);
-        }
-
-        footer p {
-            margin: 6px 0;
-            color: #7b6f9f;
-        }
-
-        footer .highlight {
-            color: var(--pink-neon);
-            font-weight: bold;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #6a618c;
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR COM EFEITO BLUR -->
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="NeoGeneses 3D">
-        </div>
+        <div class="nav-brand">NEOGENESES 3D</div>
         <nav>
-            <a href="#" class="active">Loja Virtual</a>
-            <a href="#">Como Fabricamos</a>
-            <a href="#">Orçamento Premium</a>
+            <a href="#" class="active">Galeria</a>
+            <a href="#">Orçamentos</a>
         </nav>
     </header>
 
-    <!-- BANNER PRINCIPAL (HERO) -->
+    <!-- HERO BANNER COM LOGO CENTRALIZADO EM DESTAQUE -->
     <section class="hero">
-        <div class="quality-badge">✨ Tecnologia de Ponta & Acabamento Fino</div>
-        <h1>Suas ideias ganham vida e cor! 🔮</h1>
-        <p>Criamos universos inteiros camada por camada. Esqueça rebarbas e marcas grosseiras: aqui você garante <strong>máxima resolução, cores vibrantes e o tamanho perfeito</strong> para o seu espaço.</p>
-        <button class="cta-btn">Explorar o Universo NeoGeneses</button>
+        <div class="hero-logo-wrapper">
+            <img src="logo.png" alt="NeoGeneses Logo Oficial">
+        </div>
+        <h1>A Revolução da Impressão 3D</h1>
+        <p>Peças exclusivas com acabamento fino, alta resolução e pós-processamento detalhado para transformar suas ideias em realidade.</p>
+        <button class="cta-btn">Ver Catálogo Completo</button>
     </section>
 
-    <!-- NAVEGAÇÃO POR NICHOS -->
-    <h2 class="section-title">Escolha o seu nicho favorito</h2>
-    <p class="section-subtitle">Navegue de forma simples, divertida e monte o produto do seu jeito!</p>
-    
-    <section class="categories-grid">
-        <div class="category-card" data-tilt>
-            <span class="category-icon">👾</span>
-            <h3>Geek & Pop</h3>
-        </div>
-        <div class="category-card" data-tilt>
-            <span class="category-icon">🌱</span>
-            <h3>Casa & Decor</h3>
-        </div>
-        <div class="category-card" data-tilt>
-            <span class="category-icon">🛠️</span>
-            <h3>Utilidades</h3>
-        </div>
-        <div class="category-card" data-tilt>
-            <span class="category-icon">🔑</span>
-            <h3>Acessórios</h3>
-        </div>
-    </section>
+    <h2 class="section-title">Coleções em Destaque</h2>
+    <p class="section-subtitle">Passe o mouse sobre os produtos para interagir com o movimento 3D.</p>
 
-    <!-- VITRINE DE PRODUTOS PREMIUM -->
-    <h2 class="section-title">Nossas Criações Impecáveis</h2>
-    <p class="section-subtitle">Cada peça passa por pós-processamento manual para garantir o acabamento fino.</p>
-
+    <!-- VITRINE DE PRODUTOS ATUALIZADA -->
     <section class="products-grid">
 
-        <!-- PRODUTO 1: GEEK (FOTO: suporte.jpg) -->
-        <div class="product-card">
-            <img src="suporte.jpg" alt="Suporte Geek Premium" class="product-image">
+        <!-- PRODUTO GEEK -->
+        <div class="product-card" data-tilt>
+            <div class="product-image-container bg-geek">
+                <img src="suporte.jpg" alt="Produto Geek Premium">
+            </div>
             <div class="product-info">
-                <div class="product-header-tags">
-                    <span class="product-tag">Geek & Pop</span>
-                    <span class="premium-label">⭐ Acabamento Fino</span>
-                </div>
-                <h3 class="product-title">Suporte Avançado Setup</h3>
-                
+                <span class="product-tag">Universo Geek</span>
+                <h3 class="product-title">Action Figure & Suportes Setup</h3>
                 <div class="customizer">
-                    <div class="customizer-title">Selecione a Cor do Filamento:</div>
+                    <div class="customizer-title">Cores Disponíveis:</div>
                     <div class="color-options">
                         <div class="color-dot" style="background-color: #ff007f;" title="Rosa Neon"></div>
-                        <div class="color-dot" style="background-color: #00f0ff;" title="Azul Elétrico"></div>
+                        <div class="color-dot" style="background-color: #00f0ff;" title="Azul Neon"></div>
                         <div class="color-dot" style="background-color: #ffd700;" title="Ouro Silk"></div>
-                        <div class="color-dot" style="background-color: #000000;" title="Preto Premium"></div>
                     </div>
-                    
-                    <div class="customizer-title">Defina o Tamanho da Peça:</div>
+                    <div class="customizer-title">Tamanho:</div>
                     <div class="size-options">
-                        <button class="size-btn">P (10cm)</button>
-                        <button class="size-btn">M (15cm)</button>
-                        <button class="size-btn">G (22cm)</button>
+                        <button class="size-btn">Colecionável</button>
+                        <button class="size-btn">Realista</button>
                     </div>
                 </div>
-                <button class="buy-btn">Adicionar ao Carrinho Mágico</button>
+                <button class="buy-btn">Encomendar Peça</button>
             </div>
         </div>
 
-        <!-- PRODUTO 2: CASA & DECORAÇÃO (FOTO: vaso.jpg) -->
-        <div class="product-card">
-            <img src="vaso.jpg" alt="Vaso Prisma Minimalista" class="product-image">
+        <!-- UTILIDADES DOMÉSTICAS -->
+        <div class="product-card" data-tilt>
+            <div class="product-image-container bg-utilidades">
+                <img src="vaso.jpg" alt="Utilidades Domésticas 3D">
+            </div>
             <div class="product-info">
-                <div class="product-header-tags">
-                    <span class="product-tag">Casa & Decor</span>
-                    <span class="premium-label">⭐ Lixado & Polido</span>
-                </div>
-                <h3 class="product-title">Vaso Prisma Minimalista</h3>
-                
+                <span class="product-tag">Utilidades Domésticas</span>
+                <h3 class="product-title">Decoração & Organizadores</h3>
                 <div class="customizer">
-                    <div class="customizer-title">Selecione a Cor do Filamento:</div>
+                    <div class="customizer-title">Cores Disponíveis:</div>
                     <div class="color-options">
-                        <div class="color-dot" style="background-color: #ffffff; border: 1px solid #555;" title="Branco Cetim"></div>
+                        <div class="color-dot" style="background-color: #ffffff; border: 1px solid #ddd;" title="Branco Cetim"></div>
+                        <div class="color-dot" style="background-color: #000000;" title="Preto Matte"></div>
                         <div class="color-dot" style="background-color: #8a2be2;" title="Roxo Cyber"></div>
-                        <div class="color-dot" style="background-color: #ff4500;" title="Laranja Vivo"></div>
-                        <div class="color-dot" style="background-color: #00ff00;" title="Verde Ácido"></div>
                     </div>
-                    
-                    <div class="customizer-title">Defina o Tamanho da Peça:</div>
+                    <div class="customizer-title">Tamanho:</div>
                     <div class="size-options">
-                        <button class="size-btn">P (12cm)</button>
-                        <button class="size-btn">M (18cm)</button>
-                        <button class="size-btn">G (26cm)</button>
+                        <button class="size-btn">Padrão</button>
+                        <button class="size-btn">Sob Medida</button>
                     </div>
                 </div>
-                <button class="buy-btn">Adicionar ao Carrinho Mágico</button>
+                <button class="buy-btn">Encomendar Peça</button>
             </div>
         </div>
 
-        <!-- PRODUTO 3: UTILIDADES (FOTO: organizador.jpg) -->
-        <div class="product-card">
-            <img src="organizador.jpg" alt="Organizador Setup Modular" class="product-image">
+        <!-- ACESSÓRIOS -->
+        <div class="product-card" data-tilt>
+            <div class="product-image-container bg-acessorios">
+                <img src="organizador.jpg" alt="Acessórios Impressos em 3D">
+            </div>
             <div class="product-info">
-                <div class="product-header-tags">
-                    <span class="product-tag">Utilidades</span>
-                    <span class="premium-label">⭐ Alta Resistência</span>
-                </div>
-                <h3 class="product-title">Organizador Setup Modular</h3>
-                
+                <span class="product-tag">Acessórios</span>
+                <h3 class="product-title">Chaveiros & Peças Técnicas</h3>
                 <div class="customizer">
-                    <div class="customizer-title">Selecione a Cor do Filamento:</div>
+                    <div class="customizer-title">Cores Disponíveis:</div>
                     <div class="color-options">
-                        <div class="color-dot" style="background-color: #000000;" title="Preto Fosco"></div>
-                        <div class="color-dot" style="background-color: #708090;" title="Cinza Espacial"></div>
-                        <div class="color-dot" style="background-color: #00f0ff;" title="Azul Elétrico"></div>
+                        <div class="color-dot" style="background-color: #ff4500;" title="Laranja Solar"></div>
+                        <div class="color-dot" style="background-color: #00ff00;" title="Verde Ácido"></div>
+                        <div class="color-dot" style="background-color: #708090;" title="Cinza Titânio"></div>
                     </div>
-                    
-                    <div class="customizer-title">Defina o Tamanho da Peça:</div>
+                    <div class="customizer-title">Tamanho:</div>
                     <div class="size-options">
-                        <button class="size-btn">Padrão 1 Bloco</button>
-                        <button class="size-btn">Combo 3 Blocos</button>
+                        <button class="size-btn">Único</button>
+                        <button class="size-btn">Kit Bloco</button>
                     </div>
                 </div>
-                <button class="buy-btn">Adicionar ao Carrinho Mágico</button>
+                <button class="buy-btn">Encomendar Peça</button>
             </div>
         </div>
 
     </section>
 
-    <!-- FOOTER -->
     <footer>
-        <p>🔮 <span class="highlight">NeoGeneses</span> - Materializando imaginação com alta precisão e pós-processamento fino.</p>
-        <p>Peças sem rebarbas, feitas sob medida e enviadas com todo carinho para você.</p>
-        <p style="font-size: 12px; margin-top: 20px; color: #4e4470;">© 2026 NeoGeneses 3D. Todos os direitos reservados de criação.</p>
+        <p>© 2026 NeoGeneses 3D. Alta precisão e acabamento manual impecável.</p>
     </footer>
 
-    <!-- --- INCLUSÃO DO MOTOR JAVASCRIPT DE DINÂMICA 3D --- -->
+    <!-- BIBLIOTECA JAVASCRIPT PARA O EFEITO DE INCLINAÇÃO 3D -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script>
-        // Inicializa a inclinação física 3D em todos os blocos de produtos com reflexo de luz (glare)
+        // Ativa a física tridimensional nos cartões
         VanillaTilt.init(document.querySelectorAll(".product-card"), {
-            max: 10,             // Ângulo máximo de inclinação física
-            speed: 500,          // Velocidade da transição de retorno
-            glare: true,         // Ativa o reflexo de luz ultra-moderno
-            "max-glare": 0.25,   // Intensidade máxima do brilho do reflexo
-            gyroscope: true      // Permite inclinar movendo o celular!
-        });
-
-        // Inicializa a inclinação também nas caixinhas de nichos
-        VanillaTilt.init(document.querySelectorAll(".category-card"), {
-            max: 15,
-            speed: 400
+            max: 12,
+            speed: 600,
+            glare: true,
+            "max-glare": 0.3,
+            gyroscope: true
         });
     </script>
 </body>
